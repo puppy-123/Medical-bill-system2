@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Billing System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400% 400%;
+            animation: rainbow 10s infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        form {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medical Billing System</h1>
+    <form action="bill_summary.html" method="GET">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="sickness">Diagnosis/Sickness:</label>
+        <input type="text" id="sickness" name="sickness" required>
+
+        <label for="symptoms">Symptoms (comma-separated):</label>
+        <input type="text" id="symptoms" name="symptoms" required>
+
+        <h2>Available Procedures</h2>
+        <label><input type="checkbox" name="procedures" value="general_checkup"> General Checkup ($20)</label>
+        <label><input type="checkbox" name="procedures" value="blood_test"> Blood Test ($15)</label>
+        <label><input type="checkbox" name="procedures" value="xray"> X-Ray ($25)</label>
+        <label><input type="checkbox" name="procedures" value="consultation"> Consultation ($10)</label>
+        <label><input type="checkbox" name="procedures" value="medication"> Medication ($30)</label>
+        <label><input type="checkbox" name="procedures" value="minor_surgery"> Minor Surgery ($50)</label>
+        <label><input type="checkbox" name="procedures" value="vaccination"> Vaccination ($10)</label>
+
+        <button type="submit">Generate Bill</button>
+    </form>
+</body>
+</html>
